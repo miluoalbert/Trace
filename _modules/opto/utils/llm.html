@@ -13,46 +13,49 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="../../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link href="../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-  
-  <link href="../../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
   
+  <!-- So that users can add custom icons -->
+  <script src="../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
-<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
-  <script src="../../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../../_static/copybutton.js?v=f281be69"></script>
-    <script src="../../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script data-domain="microsoft.github.io/trace" defer="defer" src="https://plausible.io/js/script.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../../_static/design-tabs.js?v=36754332"></script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
@@ -62,6 +65,7 @@
     <link rel="search" title="Search" href="../../../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -69,31 +73,16 @@
 
   
   
-  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../../../search.html"
       method="get">
@@ -101,7 +90,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -109,10 +97,15 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
     </header>
   
 
@@ -123,7 +116,8 @@
       
         
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -138,6 +132,8 @@
         <div class="sidebar-primary-item">
 
   
+    
+  
 
 <a class="navbar-brand logo" href="../../../intro.html">
   
@@ -151,21 +147,17 @@
     
     
     <img src="../../../_static/trace_logo.png" class="logo__image only-light" alt="Trace - Home"/>
-    <script>document.write(`<img src="../../../_static/trace_logo.png" class="logo__image only-dark" alt="Trace - Home"/>`);</script>
+    <img src="../../../_static/trace_logo.png" class="logo__image only-dark pst-js-only" alt="Trace - Home"/>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -212,63 +204,40 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">📖 API Reference</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../../api/opto/opto.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">opto</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/opto/opto.trace.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">opto.trace</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/opto/opto.trace.propagators.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">opto.trace.propagators</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../api/opto/opto.trace.propagators.propagators.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">opto.trace.propagators.propagators</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../api/opto/opto.trace.propagators.graph_propagator.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">opto.trace.propagators.graph_propagator</span></code></a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../api.html">API documentation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../_generated/opto.html">opto</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../_generated/opto.optimizers.html">opto.optimizers</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_generated/opto.optimizers.buffers.html">opto.optimizers.buffers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_generated/opto.optimizers.opro.html">opto.optimizers.opro</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_generated/opto.optimizers.optimizer.html">opto.optimizers.optimizer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_generated/opto.optimizers.optoprime.html">opto.optimizers.optoprime</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_generated/opto.optimizers.textgrad.html">opto.optimizers.textgrad</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_generated/opto.optimizers.utils.html">opto.optimizers.utils</a></li>
 </ul>
-</li>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../_generated/opto.trace.html">opto.trace</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_generated/opto.trace.stop_tracing.html">opto.trace.stop_tracing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_generated/opto.trace.broadcast.html">opto.trace.broadcast</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_generated/opto.trace.bundle.html">opto.trace.bundle</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_generated/opto.trace.containers.html">opto.trace.containers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_generated/opto.trace.errors.html">opto.trace.errors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_generated/opto.trace.iterators.html">opto.trace.iterators</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_generated/opto.trace.modules.html">opto.trace.modules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_generated/opto.trace.nodes.html">opto.trace.nodes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_generated/opto.trace.operators.html">opto.trace.operators</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_generated/opto.trace.propagators.html">opto.trace.propagators</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_generated/opto.trace.utils.html">opto.trace.utils</a></li>
 </ul>
-</li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/opto/opto.utils.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">opto.utils</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../api/opto/opto.utils.llm.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">opto.utils.llm</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../api/opto/opto.utils.trainer.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">opto.utils.trainer</span></code></a></li>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../_generated/opto.utils.html">opto.utils</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_generated/opto.utils.llm.html">opto.utils.llm</a></li>
 </ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../../api/opto/opto.optimizers.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">opto.optimizers</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../api/opto/opto.version.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">opto.version</span></code></a></li>
+</details></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_generated/opto.version.html">opto.version</a></li>
 </ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../../../api/opto/opto.optimizers.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">opto.optimizers</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../api/opto/opto.optimizers.buffers.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">opto.optimizers.buffers</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../api/opto/opto.optimizers.opro.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">opto.optimizers.opro</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../api/opto/opto.optimizers.optimizer.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">opto.optimizers.optimizer</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../api/opto/opto.optimizers.optoprime.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">opto.optimizers.optoprime</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../api/opto/opto.optimizers.textgrad.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">opto.optimizers.textgrad</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../api/opto/opto.optimizers.utils.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">opto.optimizers.utils</span></code></a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../../api/opto/opto.trace.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">opto.trace</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/opto/opto.trace.propagators.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">opto.trace.propagators</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../api/opto/opto.trace.propagators.propagators.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">opto.trace.propagators.propagators</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../api/opto/opto.trace.propagators.graph_propagator.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">opto.trace.propagators.graph_propagator</span></code></a></li>
+</details></li>
 </ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../../../api/opto/opto.trace.broadcast.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">opto.trace.broadcast</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../api/opto/opto.trace.bundle.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">opto.trace.bundle</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../api/opto/opto.trace.containers.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">opto.trace.containers</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../api/opto/opto.trace.errors.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">opto.trace.errors</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../api/opto/opto.trace.iterators.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">opto.trace.iterators</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../api/opto/opto.trace.modules.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">opto.trace.modules</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../api/opto/opto.trace.nodes.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">opto.trace.nodes</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../api/opto/opto.trace.operators.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">opto.trace.operators</span></code></a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../../api/opto/opto.trace.propagators.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">opto.trace.propagators</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../api/opto/opto.trace.propagators.propagators.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">opto.trace.propagators.propagators</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../api/opto/opto.trace.propagators.graph_propagator.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">opto.trace.propagators.graph_propagator</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../../../api/opto/opto.trace.propagators.graph_propagator.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">opto.trace.propagators.graph_propagator</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../api/opto/opto.trace.propagators.propagators.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">opto.trace.propagators.propagators</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../api/opto/opto.trace.utils.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">opto.trace.utils</span></code></a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../../api/opto/opto.utils.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">opto.utils</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../api/opto/opto.utils.llm.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">opto.utils.llm</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../api/opto/opto.utils.trainer.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">opto.utils.trainer</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../../../api/opto/opto.utils.llm.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">opto.utils.llm</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../api/opto/opto.utils.trainer.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">opto.utils.trainer</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../api/opto/opto.version.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">opto.version</span></code></a></li>
+</details></li>
 </ul>
 
     </div>
@@ -277,14 +246,19 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -293,14 +267,14 @@
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -343,24 +317,16 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
+</button>
 
 </div></div>
       
@@ -387,21 +353,25 @@ document.write(`
                 <article class="bd-article">
                   
   <h1>Source code for opto.utils.llm</h1><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">Union</span>
-<span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">time</span>
-<span class="kn">import</span> <span class="nn">json</span>
-<span class="kn">import</span> <span class="nn">autogen</span>  <span class="c1"># We import autogen here to avoid the need of installing autogen</span>
+<span></span><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">Union</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">autogen</span>  <span class="c1"># We import autogen here to avoid the need of installing autogen</span>
+
 
 <div class="viewcode-block" id="AbstractModel">
-<a class="viewcode-back" href="../../../api/opto/opto.utils.llm.html#opto.utils.llm.AbstractModel">[docs]</a>
-<span class="k">class</span> <span class="nc">AbstractModel</span><span class="p">:</span>
+<a class="viewcode-back" href="../../../_generated/opto.utils.llm.AbstractModel.html#opto.utils.llm.AbstractModel">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">AbstractModel</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    A minimal abstraction of a model api that refreshes the model every</span>
 <span class="sd">    reset_freq seconds (this is useful for long-running models that may require</span>
 <span class="sd">    refreshing certificates or memory management).</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">factory</span><span class="p">:</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">reset_freq</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="kc">None</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+
+<div class="viewcode-block" id="AbstractModel.__init__">
+<a class="viewcode-back" href="../../../_generated/opto.utils.llm.AbstractModel.html#opto.utils.llm.AbstractModel.__init__">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">factory</span><span class="p">:</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">reset_freq</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="kc">None</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Args:</span>
 <span class="sd">            factory: A function that takes no arguments and returns a model that is callable.</span>
@@ -411,37 +381,49 @@ document.write(`
         <span class="bp">self</span><span class="o">.</span><span class="n">factory</span> <span class="o">=</span> <span class="n">factory</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_model</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">factory</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">reset_freq</span> <span class="o">=</span> <span class="n">reset_freq</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_init_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_init_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span></div>
+
 
     <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">model</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">model</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="c1"># Overwrite this when subclassing</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_model</span>
 
     <span class="c1"># This is the main API</span>
-    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot; The call function handles refreshing the model if needed. &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">reset_freq</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">_init_time</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">reset_freq</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;The call function handles refreshing the model if needed.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">reset_freq</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+            <span class="ow">and</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">_init_time</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">reset_freq</span>
+        <span class="p">):</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_model</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">factory</span><span class="p">()</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_init_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">__getstate__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">__getstate__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">state</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-        <span class="n">state</span><span class="p">[</span><span class="s1">&#39;_model&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">state</span><span class="p">[</span><span class="s2">&quot;_model&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="k">return</span> <span class="n">state</span>
 
-    <span class="k">def</span> <span class="nf">__setstate__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">__setstate__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_model</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">factory</span><span class="p">()</span></div>
 
 
-<div class="viewcode-block" id="AutoGenLLM">
-<a class="viewcode-back" href="../../../api/opto/opto.utils.llm.html#opto.utils.llm.AutoGenLLM">[docs]</a>
-<span class="k">class</span> <span class="nc">AutoGenLLM</span><span class="p">(</span><span class="n">AbstractModel</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot; This is the main class Trace uses to interact with the model. It is a wrapper around autogen&#39;s OpenAIWrapper. For using models not supported by autogen, subclass AutoGenLLM and override the `_factory` and  `create` method. Users can pass instances of this class to optimizers&#39; llm argument. &quot;&quot;&quot;</span>
 
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config_list</span><span class="p">:</span> <span class="n">List</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">filter_dict</span><span class="p">:</span> <span class="n">Dict</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">reset_freq</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="kc">None</span><span class="p">]</span>  <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<div class="viewcode-block" id="AutoGenLLM">
+<a class="viewcode-back" href="../../../_generated/opto.utils.llm.AutoGenLLM.html#opto.utils.llm.AutoGenLLM">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">AutoGenLLM</span><span class="p">(</span><span class="n">AbstractModel</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This is the main class Trace uses to interact with the model. It is a wrapper around autogen&#39;s OpenAIWrapper. For using models not supported by autogen, subclass AutoGenLLM and override the `_factory` and  `create` method. Users can pass instances of this class to optimizers&#39; llm argument.&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="AutoGenLLM.__init__">
+<a class="viewcode-back" href="../../../_generated/opto.utils.llm.AutoGenLLM.html#opto.utils.llm.AutoGenLLM.__init__">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">config_list</span><span class="p">:</span> <span class="n">List</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">filter_dict</span><span class="p">:</span> <span class="n">Dict</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">reset_freq</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="kc">None</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">config_list</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">try</span><span class="p">:</span>
                 <span class="n">config_list</span> <span class="o">=</span> <span class="n">autogen</span><span class="o">.</span><span class="n">config_list_from_json</span><span class="p">(</span><span class="s2">&quot;OAI_CONFIG_LIST&quot;</span><span class="p">)</span>
@@ -452,21 +434,22 @@ document.write(`
         <span class="k">if</span> <span class="n">filter_dict</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">config_list</span> <span class="o">=</span> <span class="n">autogen</span><span class="o">.</span><span class="n">filter_config_list</span><span class="p">(</span><span class="n">config_list</span><span class="p">,</span> <span class="n">filter_dict</span><span class="p">)</span>
 
-        <span class="n">factory</span> <span class="o">=</span> <span class="k">lambda</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span> <span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_factory</span><span class="p">(</span><span class="n">config_list</span><span class="p">)</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">factory</span><span class="p">,</span> <span class="n">reset_freq</span><span class="p">)</span>
+        <span class="n">factory</span> <span class="o">=</span> <span class="k">lambda</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_factory</span><span class="p">(</span><span class="n">config_list</span><span class="p">)</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">factory</span><span class="p">,</span> <span class="n">reset_freq</span><span class="p">)</span></div>
+
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">_factory</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">config_list</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_factory</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">config_list</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">autogen</span><span class="o">.</span><span class="n">OpenAIWrapper</span><span class="p">(</span><span class="n">config_list</span><span class="o">=</span><span class="n">config_list</span><span class="p">)</span>
 
     <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">model</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="k">lambda</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span> <span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">model</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="k">lambda</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
     <span class="c1"># This is main API. We use the API of autogen&#39;s OpenAIWrapper</span>
 <div class="viewcode-block" id="AutoGenLLM.create">
-<a class="viewcode-back" href="../../../api/opto/opto.utils.llm.html#opto.utils.llm.AutoGenLLM.create">[docs]</a>
-    <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">config</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">autogen</span><span class="o">.</span><span class="n">ModelClient</span><span class="o">.</span><span class="n">ModelClientResponseProtocol</span><span class="p">:</span>
+<a class="viewcode-back" href="../../../_generated/opto.utils.llm.AutoGenLLM.create.html#opto.utils.llm.AutoGenLLM.create">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">create</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">config</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">autogen</span><span class="o">.</span><span class="n">ModelClient</span><span class="o">.</span><span class="n">ModelClientResponseProtocol</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Make a completion for a given config using available clients.</span>
 <span class="sd">        Besides the kwargs allowed in openai&#39;s [or other] client, we allow the following additional kwargs.</span>
 <span class="sd">        The config in each client will be overridden by the config.</span>
@@ -489,16 +472,16 @@ document.write(`
 <span class="sd">                Note: this is a legacy argument. It is only used when the cache argument is not provided.</span>
 <span class="sd">            - filter_func (Callable | None): A function that takes in the context and the response</span>
 <span class="sd">                and returns a boolean to indicate whether the response is valid. E.g.,</span>
-
-<span class="sd">        ```python</span>
-<span class="sd">        def yes_or_no_filter(context, response):</span>
-<span class="sd">            return context.get(&quot;yes_or_no_choice&quot;, False) is False or any(</span>
-<span class="sd">                text in [&quot;Yes.&quot;, &quot;No.&quot;] for text in client.extract_text_or_completion_object(response)</span>
-<span class="sd">            )</span>
-<span class="sd">        ```</span>
-
 <span class="sd">            - allow_format_str_template (bool | None): Whether to allow format string template in the config. Default to false.</span>
 <span class="sd">            - api_version (str | None): The api version. Default to None. E.g., &quot;2024-02-01&quot;.</span>
+
+<span class="sd">        Example:</span>
+<span class="sd">            &gt;&gt;&gt; # filter_func example:</span>
+<span class="sd">            &gt;&gt;&gt; def yes_or_no_filter(context, response):</span>
+<span class="sd">            &gt;&gt;&gt;    return context.get(&quot;yes_or_no_choice&quot;, False) is False or any(</span>
+<span class="sd">            &gt;&gt;&gt;        text in [&quot;Yes.&quot;, &quot;No.&quot;] for text in client.extract_text_or_completion_object(response)</span>
+<span class="sd">            &gt;&gt;&gt;    )</span>
+
 <span class="sd">        Raises:</span>
 <span class="sd">            - RuntimeError: If all declared custom model clients are not registered</span>
 <span class="sd">            - APIError: If any model client create call raises an APIError</span>
@@ -507,7 +490,10 @@ document.write(`
 </div>
 
 
-<span class="k">def</span> <span class="nf">auto_construct_oai_config_list_from_env</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">:</span>
+
+<div class="viewcode-block" id="auto_construct_oai_config_list_from_env">
+<a class="viewcode-back" href="../../../_generated/opto.utils.llm.auto_construct_oai_config_list_from_env.html#opto.utils.llm.auto_construct_oai_config_list_from_env">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">auto_construct_oai_config_list_from_env</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Collect various API keys saved in the environment and return a format like:</span>
 <span class="sd">    [{&quot;model&quot;: &quot;gpt-4&quot;, &quot;api_key&quot;: xxx}, {&quot;model&quot;: &quot;claude-3.5-sonnet&quot;, &quot;api_key&quot;: xxx}]</span>
@@ -517,10 +503,18 @@ document.write(`
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">config_list</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;OPENAI_API_KEY&quot;</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">config_list</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="s2">&quot;gpt-4o&quot;</span><span class="p">,</span> <span class="s2">&quot;api_key&quot;</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;OPENAI_API_KEY&quot;</span><span class="p">)})</span>
+        <span class="n">config_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="p">{</span><span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="s2">&quot;gpt-4o&quot;</span><span class="p">,</span> <span class="s2">&quot;api_key&quot;</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;OPENAI_API_KEY&quot;</span><span class="p">)}</span>
+        <span class="p">)</span>
     <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;ANTHROPIC_API_KEY&quot;</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">config_list</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="s2">&quot;claude-3-5-sonnet-latest&quot;</span><span class="p">,</span> <span class="s2">&quot;api_key&quot;</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;ANTHROPIC_API_KEY&quot;</span><span class="p">)})</span>
-    <span class="k">return</span> <span class="n">config_list</span>
+        <span class="n">config_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="s2">&quot;claude-3-5-sonnet-latest&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;api_key&quot;</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;ANTHROPIC_API_KEY&quot;</span><span class="p">),</span>
+            <span class="p">}</span>
+        <span class="p">)</span>
+    <span class="k">return</span> <span class="n">config_list</span></div>
+
 </pre></div>
 
                 </article>
@@ -530,7 +524,7 @@ document.write(`
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
 </div>
@@ -539,8 +533,6 @@ document.write(`
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"></div>
               
             
           </div>
@@ -588,8 +580,8 @@ By Ching-An Cheng, Allen Nie, Adith Swaminathan
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
-<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>

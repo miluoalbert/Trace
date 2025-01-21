@@ -13,46 +13,49 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="../../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link href="../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-  
-  <link href="../../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
   
+  <!-- So that users can add custom icons -->
+  <script src="../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
-<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
-  <script src="../../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../../_static/copybutton.js?v=f281be69"></script>
-    <script src="../../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script data-domain="microsoft.github.io/trace" defer="defer" src="https://plausible.io/js/script.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../../_static/design-tabs.js?v=36754332"></script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
@@ -62,6 +65,7 @@
     <link rel="search" title="Search" href="../../../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -69,31 +73,16 @@
 
   
   
-  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../../../search.html"
       method="get">
@@ -101,7 +90,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -109,10 +97,15 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
     </header>
   
 
@@ -123,7 +116,8 @@
       
         
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -138,6 +132,8 @@
         <div class="sidebar-primary-item">
 
   
+    
+  
 
 <a class="navbar-brand logo" href="../../../intro.html">
   
@@ -151,21 +147,17 @@
     
     
     <img src="../../../_static/trace_logo.png" class="logo__image only-light" alt="Trace - Home"/>
-    <script>document.write(`<img src="../../../_static/trace_logo.png" class="logo__image only-dark" alt="Trace - Home"/>`);</script>
+    <img src="../../../_static/trace_logo.png" class="logo__image only-dark pst-js-only" alt="Trace - Home"/>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -212,63 +204,40 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">📖 API Reference</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../../api/opto/opto.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">opto</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/opto/opto.trace.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">opto.trace</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/opto/opto.trace.propagators.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">opto.trace.propagators</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../api/opto/opto.trace.propagators.propagators.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">opto.trace.propagators.propagators</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../api/opto/opto.trace.propagators.graph_propagator.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">opto.trace.propagators.graph_propagator</span></code></a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../api.html">API documentation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../_generated/opto.html">opto</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../_generated/opto.optimizers.html">opto.optimizers</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_generated/opto.optimizers.buffers.html">opto.optimizers.buffers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_generated/opto.optimizers.opro.html">opto.optimizers.opro</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_generated/opto.optimizers.optimizer.html">opto.optimizers.optimizer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_generated/opto.optimizers.optoprime.html">opto.optimizers.optoprime</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_generated/opto.optimizers.textgrad.html">opto.optimizers.textgrad</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_generated/opto.optimizers.utils.html">opto.optimizers.utils</a></li>
 </ul>
-</li>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../_generated/opto.trace.html">opto.trace</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_generated/opto.trace.stop_tracing.html">opto.trace.stop_tracing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_generated/opto.trace.broadcast.html">opto.trace.broadcast</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_generated/opto.trace.bundle.html">opto.trace.bundle</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_generated/opto.trace.containers.html">opto.trace.containers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_generated/opto.trace.errors.html">opto.trace.errors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_generated/opto.trace.iterators.html">opto.trace.iterators</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_generated/opto.trace.modules.html">opto.trace.modules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_generated/opto.trace.nodes.html">opto.trace.nodes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_generated/opto.trace.operators.html">opto.trace.operators</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_generated/opto.trace.propagators.html">opto.trace.propagators</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_generated/opto.trace.utils.html">opto.trace.utils</a></li>
 </ul>
-</li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/opto/opto.utils.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">opto.utils</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../api/opto/opto.utils.llm.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">opto.utils.llm</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../api/opto/opto.utils.trainer.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">opto.utils.trainer</span></code></a></li>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../_generated/opto.utils.html">opto.utils</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_generated/opto.utils.llm.html">opto.utils.llm</a></li>
 </ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../../api/opto/opto.optimizers.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">opto.optimizers</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../api/opto/opto.version.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">opto.version</span></code></a></li>
+</details></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_generated/opto.version.html">opto.version</a></li>
 </ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../../../api/opto/opto.optimizers.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">opto.optimizers</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../api/opto/opto.optimizers.buffers.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">opto.optimizers.buffers</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../api/opto/opto.optimizers.opro.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">opto.optimizers.opro</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../api/opto/opto.optimizers.optimizer.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">opto.optimizers.optimizer</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../api/opto/opto.optimizers.optoprime.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">opto.optimizers.optoprime</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../api/opto/opto.optimizers.textgrad.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">opto.optimizers.textgrad</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../api/opto/opto.optimizers.utils.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">opto.optimizers.utils</span></code></a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../../api/opto/opto.trace.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">opto.trace</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/opto/opto.trace.propagators.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">opto.trace.propagators</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../api/opto/opto.trace.propagators.propagators.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">opto.trace.propagators.propagators</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../api/opto/opto.trace.propagators.graph_propagator.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">opto.trace.propagators.graph_propagator</span></code></a></li>
+</details></li>
 </ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../../../api/opto/opto.trace.broadcast.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">opto.trace.broadcast</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../api/opto/opto.trace.bundle.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">opto.trace.bundle</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../api/opto/opto.trace.containers.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">opto.trace.containers</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../api/opto/opto.trace.errors.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">opto.trace.errors</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../api/opto/opto.trace.iterators.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">opto.trace.iterators</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../api/opto/opto.trace.modules.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">opto.trace.modules</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../api/opto/opto.trace.nodes.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">opto.trace.nodes</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../api/opto/opto.trace.operators.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">opto.trace.operators</span></code></a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../../api/opto/opto.trace.propagators.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">opto.trace.propagators</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../api/opto/opto.trace.propagators.propagators.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">opto.trace.propagators.propagators</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../api/opto/opto.trace.propagators.graph_propagator.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">opto.trace.propagators.graph_propagator</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../../../api/opto/opto.trace.propagators.graph_propagator.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">opto.trace.propagators.graph_propagator</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../api/opto/opto.trace.propagators.propagators.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">opto.trace.propagators.propagators</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../api/opto/opto.trace.utils.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">opto.trace.utils</span></code></a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../../api/opto/opto.utils.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">opto.utils</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../api/opto/opto.utils.llm.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">opto.utils.llm</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../api/opto/opto.utils.trainer.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">opto.utils.trainer</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../../../api/opto/opto.utils.llm.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">opto.utils.llm</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../api/opto/opto.utils.trainer.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">opto.utils.trainer</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../api/opto/opto.version.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">opto.version</span></code></a></li>
+</details></li>
 </ul>
 
     </div>
@@ -277,14 +246,19 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -293,14 +267,14 @@
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -343,24 +317,16 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
+</button>
 
 </div></div>
       
@@ -387,26 +353,25 @@ document.write(`
                 <article class="bd-article">
                   
   <h1>Source code for opto.optimizers.optoprime</h1><div class="highlight"><pre>
-<span></span>
-<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Union</span><span class="p">,</span> <span class="n">Tuple</span>
-<span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span><span class="p">,</span> <span class="n">asdict</span>
-<span class="kn">from</span> <span class="nn">textwrap</span> <span class="kn">import</span> <span class="n">dedent</span><span class="p">,</span> <span class="n">indent</span>
-<span class="kn">import</span> <span class="nn">autogen</span>
-<span class="kn">import</span> <span class="nn">warnings</span>
-<span class="kn">import</span> <span class="nn">json</span>
-<span class="kn">import</span> <span class="nn">re</span>
-<span class="kn">import</span> <span class="nn">copy</span>
-<span class="kn">from</span> <span class="nn">opto.trace.nodes</span> <span class="kn">import</span> <span class="n">ParameterNode</span><span class="p">,</span> <span class="n">Node</span><span class="p">,</span> <span class="n">MessageNode</span>
-<span class="kn">from</span> <span class="nn">opto.trace.propagators</span> <span class="kn">import</span> <span class="n">TraceGraph</span><span class="p">,</span> <span class="n">GraphPropagator</span>
-<span class="kn">from</span> <span class="nn">opto.trace.propagators.propagators</span> <span class="kn">import</span> <span class="n">Propagator</span>
-<span class="kn">from</span> <span class="nn">opto.optimizers.optimizer</span> <span class="kn">import</span> <span class="n">Optimizer</span>
-<span class="kn">from</span> <span class="nn">opto.optimizers.buffers</span> <span class="kn">import</span> <span class="n">FIFOBuffer</span>
-<span class="kn">from</span> <span class="nn">opto.utils.llm</span> <span class="kn">import</span> <span class="n">AutoGenLLM</span>
+<span></span><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Union</span><span class="p">,</span> <span class="n">Tuple</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span><span class="p">,</span> <span class="n">asdict</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">textwrap</span><span class="w"> </span><span class="kn">import</span> <span class="n">dedent</span><span class="p">,</span> <span class="n">indent</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">autogen</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">copy</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">opto.trace.nodes</span><span class="w"> </span><span class="kn">import</span> <span class="n">ParameterNode</span><span class="p">,</span> <span class="n">Node</span><span class="p">,</span> <span class="n">MessageNode</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">opto.trace.propagators</span><span class="w"> </span><span class="kn">import</span> <span class="n">TraceGraph</span><span class="p">,</span> <span class="n">GraphPropagator</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">opto.trace.propagators.propagators</span><span class="w"> </span><span class="kn">import</span> <span class="n">Propagator</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">opto.optimizers.optimizer</span><span class="w"> </span><span class="kn">import</span> <span class="n">Optimizer</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">opto.optimizers.buffers</span><span class="w"> </span><span class="kn">import</span> <span class="n">FIFOBuffer</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">opto.utils.llm</span><span class="w"> </span><span class="kn">import</span> <span class="n">AutoGenLLM</span>
 
 
 <div class="viewcode-block" id="get_fun_name">
-<a class="viewcode-back" href="../../../api/opto/opto.optimizers.optoprime.html#opto.optimizers.get_fun_name">[docs]</a>
-<span class="k">def</span> <span class="nf">get_fun_name</span><span class="p">(</span><span class="n">node</span><span class="p">:</span> <span class="n">MessageNode</span><span class="p">):</span>
+<a class="viewcode-back" href="../../../_generated/opto.optimizers.optoprime.get_fun_name.html#opto.optimizers.optoprime.get_fun_name">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_fun_name</span><span class="p">(</span><span class="n">node</span><span class="p">:</span> <span class="n">MessageNode</span><span class="p">):</span>
     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">info</span><span class="p">,</span> <span class="nb">dict</span><span class="p">)</span> <span class="ow">and</span> <span class="s2">&quot;fun_name&quot;</span> <span class="ow">in</span> <span class="n">node</span><span class="o">.</span><span class="n">info</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">node</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s2">&quot;fun_name&quot;</span><span class="p">]</span>
     <span class="k">return</span> <span class="n">node</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;:&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span></div>
@@ -414,8 +379,8 @@ document.write(`
 
 
 <div class="viewcode-block" id="repr_function_call">
-<a class="viewcode-back" href="../../../api/opto/opto.optimizers.optoprime.html#opto.optimizers.repr_function_call">[docs]</a>
-<span class="k">def</span> <span class="nf">repr_function_call</span><span class="p">(</span><span class="n">child</span><span class="p">:</span> <span class="n">MessageNode</span><span class="p">):</span>
+<a class="viewcode-back" href="../../../_generated/opto.optimizers.optoprime.repr_function_call.html#opto.optimizers.optoprime.repr_function_call">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">repr_function_call</span><span class="p">(</span><span class="n">child</span><span class="p">:</span> <span class="n">MessageNode</span><span class="p">):</span>
     <span class="n">function_call</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">child</span><span class="o">.</span><span class="n">py_name</span><span class="si">}</span><span class="s2"> = </span><span class="si">{</span><span class="n">get_fun_name</span><span class="p">(</span><span class="n">child</span><span class="p">)</span><span class="si">}</span><span class="s2">(&quot;</span>
     <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">child</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
         <span class="n">function_call</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2">=</span><span class="si">{</span><span class="n">v</span><span class="o">.</span><span class="n">py_name</span><span class="si">}</span><span class="s2">, &quot;</span>
@@ -425,8 +390,8 @@ document.write(`
 
 
 <div class="viewcode-block" id="node_to_function_feedback">
-<a class="viewcode-back" href="../../../api/opto/opto.optimizers.optoprime.html#opto.optimizers.node_to_function_feedback">[docs]</a>
-<span class="k">def</span> <span class="nf">node_to_function_feedback</span><span class="p">(</span><span class="n">node_feedback</span><span class="p">:</span> <span class="n">TraceGraph</span><span class="p">):</span>
+<a class="viewcode-back" href="../../../_generated/opto.optimizers.optoprime.node_to_function_feedback.html#opto.optimizers.optoprime.node_to_function_feedback">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">node_to_function_feedback</span><span class="p">(</span><span class="n">node_feedback</span><span class="p">:</span> <span class="n">TraceGraph</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Convert a TraceGraph to a FunctionFeedback. roots, others, outputs are dict of variable name and its data and constraints.&quot;&quot;&quot;</span>
     <span class="n">depth</span> <span class="o">=</span> <span class="mi">0</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">node_feedback</span><span class="o">.</span><span class="n">graph</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="n">node_feedback</span><span class="o">.</span><span class="n">graph</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
     <span class="n">graph</span> <span class="o">=</span> <span class="p">[]</span>
@@ -470,9 +435,9 @@ document.write(`
 
 
 <div class="viewcode-block" id="FunctionFeedback">
-<a class="viewcode-back" href="../../../api/opto/opto.optimizers.optoprime.html#opto.optimizers.FunctionFeedback">[docs]</a>
+<a class="viewcode-back" href="../../../_generated/opto.optimizers.optoprime.FunctionFeedback.html#opto.optimizers.optoprime.FunctionFeedback">[docs]</a>
 <span class="nd">@dataclass</span>
-<span class="k">class</span> <span class="nc">FunctionFeedback</span><span class="p">:</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">FunctionFeedback</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Feedback container used by FunctionPropagator.&quot;&quot;&quot;</span>
 
     <span class="n">graph</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span>
@@ -487,9 +452,9 @@ document.write(`
 
 
 <div class="viewcode-block" id="ProblemInstance">
-<a class="viewcode-back" href="../../../api/opto/opto.optimizers.optoprime.html#opto.optimizers.ProblemInstance">[docs]</a>
+<a class="viewcode-back" href="../../../_generated/opto.optimizers.optoprime.ProblemInstance.html#opto.optimizers.optoprime.ProblemInstance">[docs]</a>
 <span class="nd">@dataclass</span>
-<span class="k">class</span> <span class="nc">ProblemInstance</span><span class="p">:</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">ProblemInstance</span><span class="p">:</span>
     <span class="n">instruction</span><span class="p">:</span> <span class="nb">str</span>
     <span class="n">code</span><span class="p">:</span> <span class="nb">str</span>
     <span class="n">documentation</span><span class="p">:</span> <span class="nb">str</span>
@@ -531,7 +496,7 @@ document.write(`
 <span class="sd">        &quot;&quot;&quot;</span>
     <span class="p">)</span>
 
-    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">problem_template</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
             <span class="n">instruction</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">instruction</span><span class="p">,</span>
             <span class="n">code</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">code</span><span class="p">,</span>
@@ -547,8 +512,8 @@ document.write(`
 
 
 <div class="viewcode-block" id="OptoPrime">
-<a class="viewcode-back" href="../../../api/opto/opto.optimizers.optoprime.html#opto.optimizers.OptoPrime">[docs]</a>
-<span class="k">class</span> <span class="nc">OptoPrime</span><span class="p">(</span><span class="n">Optimizer</span><span class="p">):</span>
+<a class="viewcode-back" href="../../../_generated/opto.optimizers.optoprime.OptoPrime.html#opto.optimizers.optoprime.OptoPrime">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">OptoPrime</span><span class="p">(</span><span class="n">Optimizer</span><span class="p">):</span>
     <span class="c1"># This is generic representation prompt, which just explains how to read the problem.</span>
     <span class="n">representation_prompt</span> <span class="o">=</span> <span class="n">dedent</span><span class="p">(</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -654,8 +619,9 @@ document.write(`
         <span class="s2">&quot;documentation&quot;</span><span class="p">:</span> <span class="s2">&quot;#Documentation&quot;</span><span class="p">,</span>
     <span class="p">}</span>
 
-
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+<div class="viewcode-block" id="OptoPrime.__init__">
+<a class="viewcode-back" href="../../../_generated/opto.optimizers.optoprime.OptoPrime.html#opto.optimizers.optoprime.OptoPrime.__init__">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">parameters</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">ParameterNode</span><span class="p">],</span>
         <span class="n">llm</span><span class="p">:</span> <span class="n">AutoGenLLM</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -668,7 +634,7 @@ document.write(`
         <span class="n">max_tokens</span><span class="o">=</span><span class="mi">4096</span><span class="p">,</span>
         <span class="n">log</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
         <span class="n">prompt_symbols</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-        <span class="n">filter_dict</span> <span class="p">:</span> <span class="n">Dict</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>  <span class="c1"># autogen filter_dict</span>
+        <span class="n">filter_dict</span><span class="p">:</span> <span class="n">Dict</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>  <span class="c1"># autogen filter_dict</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">parameters</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">propagator</span><span class="o">=</span><span class="n">propagator</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
@@ -703,20 +669,25 @@ document.write(`
         <span class="bp">self</span><span class="o">.</span><span class="n">memory</span> <span class="o">=</span> <span class="n">FIFOBuffer</span><span class="p">(</span><span class="n">memory_size</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">prompt_symbols</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">default_prompt_symbols</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">prompt_symbols</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">prompt_symbols</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">prompt_symbols</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">prompt_symbols</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">prompt_symbols</span><span class="p">)</span></div>
+
 
 <div class="viewcode-block" id="OptoPrime.default_propagator">
-<a class="viewcode-back" href="../../../api/opto/opto.optimizers.optoprime.html#opto.optimizers.OptoPrime.default_propagator">[docs]</a>
-    <span class="k">def</span> <span class="nf">default_propagator</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a class="viewcode-back" href="../../../_generated/opto.optimizers.optoprime.OptoPrime.default_propagator.html#opto.optimizers.optoprime.OptoPrime.default_propagator">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">default_propagator</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the default Propagator object of the optimizer.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">GraphPropagator</span><span class="p">()</span></div>
 
 
 <div class="viewcode-block" id="OptoPrime.summarize">
-<a class="viewcode-back" href="../../../api/opto/opto.optimizers.optoprime.html#opto.optimizers.OptoPrime.summarize">[docs]</a>
-    <span class="k">def</span> <span class="nf">summarize</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a class="viewcode-back" href="../../../_generated/opto.optimizers.optoprime.OptoPrime.summarize.html#opto.optimizers.optoprime.OptoPrime.summarize">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">summarize</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="c1"># Aggregate feedback from all the parameters</span>
-        <span class="n">feedbacks</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">propagator</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">feedback</span><span class="p">)</span> <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">parameters</span> <span class="k">if</span> <span class="n">node</span><span class="o">.</span><span class="n">trainable</span><span class="p">]</span>
+        <span class="n">feedbacks</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">propagator</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">feedback</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">parameters</span>
+            <span class="k">if</span> <span class="n">node</span><span class="o">.</span><span class="n">trainable</span>
+        <span class="p">]</span>
         <span class="n">summary</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">feedbacks</span><span class="p">)</span>  <span class="c1"># TraceGraph</span>
         <span class="c1"># Construct variables and update others</span>
         <span class="c1"># Some trainable nodes might not receive feedback, because they might not be connected to the output</span>
@@ -726,19 +697,23 @@ document.write(`
 
         <span class="n">trainable_param_dict</span> <span class="o">=</span> <span class="p">{</span><span class="n">p</span><span class="o">.</span><span class="n">py_name</span><span class="p">:</span> <span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">parameters</span> <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">trainable</span><span class="p">}</span>
         <span class="n">summary</span><span class="o">.</span><span class="n">variables</span> <span class="o">=</span> <span class="p">{</span>
-            <span class="n">py_name</span><span class="p">:</span> <span class="n">data</span> <span class="k">for</span> <span class="n">py_name</span><span class="p">,</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">summary</span><span class="o">.</span><span class="n">roots</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">py_name</span> <span class="ow">in</span> <span class="n">trainable_param_dict</span>
+            <span class="n">py_name</span><span class="p">:</span> <span class="n">data</span>
+            <span class="k">for</span> <span class="n">py_name</span><span class="p">,</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">summary</span><span class="o">.</span><span class="n">roots</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">py_name</span> <span class="ow">in</span> <span class="n">trainable_param_dict</span>
         <span class="p">}</span>
         <span class="n">summary</span><span class="o">.</span><span class="n">inputs</span> <span class="o">=</span> <span class="p">{</span>
-            <span class="n">py_name</span><span class="p">:</span> <span class="n">data</span> <span class="k">for</span> <span class="n">py_name</span><span class="p">,</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">summary</span><span class="o">.</span><span class="n">roots</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">py_name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">trainable_param_dict</span>
+            <span class="n">py_name</span><span class="p">:</span> <span class="n">data</span>
+            <span class="k">for</span> <span class="n">py_name</span><span class="p">,</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">summary</span><span class="o">.</span><span class="n">roots</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">py_name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">trainable_param_dict</span>
         <span class="p">}</span>  <span class="c1"># non-variable roots</span>
 
         <span class="k">return</span> <span class="n">summary</span></div>
 
 
 <div class="viewcode-block" id="OptoPrime.repr_node_value">
-<a class="viewcode-back" href="../../../api/opto/opto.optimizers.optoprime.html#opto.optimizers.OptoPrime.repr_node_value">[docs]</a>
+<a class="viewcode-back" href="../../../_generated/opto.optimizers.optoprime.OptoPrime.repr_node_value.html#opto.optimizers.optoprime.OptoPrime.repr_node_value">[docs]</a>
     <span class="nd">@staticmethod</span>
-    <span class="k">def</span> <span class="nf">repr_node_value</span><span class="p">(</span><span class="n">node_dict</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">repr_node_value</span><span class="p">(</span><span class="n">node_dict</span><span class="p">):</span>
         <span class="n">temp_list</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">node_dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
             <span class="k">if</span> <span class="s2">&quot;__code&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">k</span><span class="p">:</span>
@@ -749,9 +724,9 @@ document.write(`
 
 
 <div class="viewcode-block" id="OptoPrime.repr_node_constraint">
-<a class="viewcode-back" href="../../../api/opto/opto.optimizers.optoprime.html#opto.optimizers.OptoPrime.repr_node_constraint">[docs]</a>
+<a class="viewcode-back" href="../../../_generated/opto.optimizers.optoprime.OptoPrime.repr_node_constraint.html#opto.optimizers.optoprime.OptoPrime.repr_node_constraint">[docs]</a>
     <span class="nd">@staticmethod</span>
-    <span class="k">def</span> <span class="nf">repr_node_constraint</span><span class="p">(</span><span class="n">node_dict</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">repr_node_constraint</span><span class="p">(</span><span class="n">node_dict</span><span class="p">):</span>
         <span class="n">temp_list</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">node_dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
             <span class="k">if</span> <span class="s2">&quot;__code&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">k</span><span class="p">:</span>
@@ -764,36 +739,59 @@ document.write(`
 
 
 <div class="viewcode-block" id="OptoPrime.problem_instance">
-<a class="viewcode-back" href="../../../api/opto/opto.optimizers.optoprime.html#opto.optimizers.OptoPrime.problem_instance">[docs]</a>
-    <span class="k">def</span> <span class="nf">problem_instance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">summary</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<a class="viewcode-back" href="../../../_generated/opto.optimizers.optoprime.OptoPrime.problem_instance.html#opto.optimizers.optoprime.OptoPrime.problem_instance">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">problem_instance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">summary</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="n">mask</span> <span class="o">=</span> <span class="n">mask</span> <span class="ow">or</span> <span class="p">[]</span>
         <span class="k">return</span> <span class="n">ProblemInstance</span><span class="p">(</span>
-            <span class="n">instruction</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">objective</span> <span class="k">if</span> <span class="s1">&#39;#Instruction&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">mask</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-            <span class="n">code</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">summary</span><span class="o">.</span><span class="n">graph</span><span class="p">)])</span> <span class="k">if</span> <span class="s2">&quot;#Code&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">mask</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-            <span class="n">documentation</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">v</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">summary</span><span class="o">.</span><span class="n">documentation</span><span class="o">.</span><span class="n">values</span><span class="p">()])</span>
-            <span class="k">if</span> <span class="s2">&quot;#Documentation&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">mask</span>
-            <span class="k">else</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-            <span class="n">variables</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">repr_node_value</span><span class="p">(</span><span class="n">summary</span><span class="o">.</span><span class="n">variables</span><span class="p">)</span> <span class="k">if</span> <span class="s2">&quot;#Variables&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">mask</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-            <span class="n">constraints</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">repr_node_constraint</span><span class="p">(</span><span class="n">summary</span><span class="o">.</span><span class="n">variables</span><span class="p">)</span> <span class="k">if</span> <span class="s2">&quot;#Constraints&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">mask</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-            <span class="n">inputs</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">repr_node_value</span><span class="p">(</span><span class="n">summary</span><span class="o">.</span><span class="n">inputs</span><span class="p">)</span> <span class="k">if</span> <span class="s2">&quot;#Inputs&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">mask</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-            <span class="n">outputs</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">repr_node_value</span><span class="p">(</span><span class="n">summary</span><span class="o">.</span><span class="n">output</span><span class="p">)</span> <span class="k">if</span> <span class="s2">&quot;#Outputs&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">mask</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-            <span class="n">others</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">repr_node_value</span><span class="p">(</span><span class="n">summary</span><span class="o">.</span><span class="n">others</span><span class="p">)</span> <span class="k">if</span> <span class="s2">&quot;#Others&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">mask</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="n">instruction</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">objective</span> <span class="k">if</span> <span class="s2">&quot;#Instruction&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">mask</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="n">code</span><span class="o">=</span><span class="p">(</span>
+                <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">summary</span><span class="o">.</span><span class="n">graph</span><span class="p">)])</span>
+                <span class="k">if</span> <span class="s2">&quot;#Code&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">mask</span>
+                <span class="k">else</span> <span class="s2">&quot;&quot;</span>
+            <span class="p">),</span>
+            <span class="n">documentation</span><span class="o">=</span><span class="p">(</span>
+                <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">v</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">summary</span><span class="o">.</span><span class="n">documentation</span><span class="o">.</span><span class="n">values</span><span class="p">()])</span>
+                <span class="k">if</span> <span class="s2">&quot;#Documentation&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">mask</span>
+                <span class="k">else</span> <span class="s2">&quot;&quot;</span>
+            <span class="p">),</span>
+            <span class="n">variables</span><span class="o">=</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">repr_node_value</span><span class="p">(</span><span class="n">summary</span><span class="o">.</span><span class="n">variables</span><span class="p">)</span>
+                <span class="k">if</span> <span class="s2">&quot;#Variables&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">mask</span>
+                <span class="k">else</span> <span class="s2">&quot;&quot;</span>
+            <span class="p">),</span>
+            <span class="n">constraints</span><span class="o">=</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">repr_node_constraint</span><span class="p">(</span><span class="n">summary</span><span class="o">.</span><span class="n">variables</span><span class="p">)</span>
+                <span class="k">if</span> <span class="s2">&quot;#Constraints&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">mask</span>
+                <span class="k">else</span> <span class="s2">&quot;&quot;</span>
+            <span class="p">),</span>
+            <span class="n">inputs</span><span class="o">=</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">repr_node_value</span><span class="p">(</span><span class="n">summary</span><span class="o">.</span><span class="n">inputs</span><span class="p">)</span> <span class="k">if</span> <span class="s2">&quot;#Inputs&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">mask</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span>
+            <span class="p">),</span>
+            <span class="n">outputs</span><span class="o">=</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">repr_node_value</span><span class="p">(</span><span class="n">summary</span><span class="o">.</span><span class="n">output</span><span class="p">)</span> <span class="k">if</span> <span class="s2">&quot;#Outputs&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">mask</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span>
+            <span class="p">),</span>
+            <span class="n">others</span><span class="o">=</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">repr_node_value</span><span class="p">(</span><span class="n">summary</span><span class="o">.</span><span class="n">others</span><span class="p">)</span> <span class="k">if</span> <span class="s2">&quot;#Others&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">mask</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span>
+            <span class="p">),</span>
             <span class="n">feedback</span><span class="o">=</span><span class="n">summary</span><span class="o">.</span><span class="n">user_feedback</span> <span class="k">if</span> <span class="s2">&quot;#Feedback&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">mask</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
         <span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="OptoPrime.construct_prompt">
-<a class="viewcode-back" href="../../../api/opto/opto.optimizers.optoprime.html#opto.optimizers.OptoPrime.construct_prompt">[docs]</a>
-    <span class="k">def</span> <span class="nf">construct_prompt</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">summary</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<a class="viewcode-back" href="../../../_generated/opto.optimizers.optoprime.OptoPrime.construct_prompt.html#opto.optimizers.optoprime.OptoPrime.construct_prompt">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">construct_prompt</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">summary</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Construct the system and user prompt.&quot;&quot;&quot;</span>
-        <span class="n">system_prompt</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">representation_prompt</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">output_format_prompt</span>  <span class="c1"># generic representation + output rule</span>
+        <span class="n">system_prompt</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">representation_prompt</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">output_format_prompt</span>
+        <span class="p">)</span>  <span class="c1"># generic representation + output rule</span>
         <span class="n">user_prompt</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">user_prompt_template</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
             <span class="n">problem_instance</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">problem_instance</span><span class="p">(</span><span class="n">summary</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="n">mask</span><span class="p">))</span>
         <span class="p">)</span>  <span class="c1"># problem instance</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">include_example</span><span class="p">:</span>
             <span class="n">user_prompt</span> <span class="o">=</span> <span class="p">(</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">example_problem_template</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
-                    <span class="n">example_problem</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">example_problem</span><span class="p">,</span> <span class="n">example_response</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">example_response</span>
+                    <span class="n">example_problem</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">example_problem</span><span class="p">,</span>
+                    <span class="n">example_response</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">example_response</span><span class="p">,</span>
                 <span class="p">)</span>
                 <span class="o">+</span> <span class="n">user_prompt</span>
             <span class="p">)</span>
@@ -825,14 +823,16 @@ document.write(`
 
 
 <div class="viewcode-block" id="OptoPrime.replace_symbols">
-<a class="viewcode-back" href="../../../api/opto/opto.optimizers.optoprime.html#opto.optimizers.OptoPrime.replace_symbols">[docs]</a>
-    <span class="k">def</span> <span class="nf">replace_symbols</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">symbols</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<a class="viewcode-back" href="../../../_generated/opto.optimizers.optoprime.OptoPrime.replace_symbols.html#opto.optimizers.optoprime.OptoPrime.replace_symbols">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">replace_symbols</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">symbols</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">symbols</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
             <span class="n">text</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">default_prompt_symbols</span><span class="p">[</span><span class="n">k</span><span class="p">],</span> <span class="n">v</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">text</span></div>
 
 
-    <span class="k">def</span> <span class="nf">_step</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="n">ParameterNode</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_step</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="n">ParameterNode</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
         <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">propagator</span><span class="p">,</span> <span class="n">GraphPropagator</span><span class="p">)</span>
         <span class="n">summary</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">summarize</span><span class="p">()</span>
         <span class="n">system_prompt</span><span class="p">,</span> <span class="n">user_prompt</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">construct_prompt</span><span class="p">(</span><span class="n">summary</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="n">mask</span><span class="p">)</span>
@@ -841,7 +841,10 @@ document.write(`
         <span class="n">user_prompt</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">replace_symbols</span><span class="p">(</span><span class="n">user_prompt</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">prompt_symbols</span><span class="p">)</span>
 
         <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">call_llm</span><span class="p">(</span>
-            <span class="n">system_prompt</span><span class="o">=</span><span class="n">system_prompt</span><span class="p">,</span> <span class="n">user_prompt</span><span class="o">=</span><span class="n">user_prompt</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="n">verbose</span><span class="p">,</span> <span class="n">max_tokens</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">max_tokens</span>
+            <span class="n">system_prompt</span><span class="o">=</span><span class="n">system_prompt</span><span class="p">,</span>
+            <span class="n">user_prompt</span><span class="o">=</span><span class="n">user_prompt</span><span class="p">,</span>
+            <span class="n">verbose</span><span class="o">=</span><span class="n">verbose</span><span class="p">,</span>
+            <span class="n">max_tokens</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">max_tokens</span><span class="p">,</span>
         <span class="p">)</span>
 
         <span class="k">if</span> <span class="s2">&quot;TERMINATE&quot;</span> <span class="ow">in</span> <span class="n">response</span><span class="p">:</span>
@@ -851,14 +854,24 @@ document.write(`
         <span class="n">update_dict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">construct_update_dict</span><span class="p">(</span><span class="n">suggestion</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">log</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s2">&quot;system_prompt&quot;</span><span class="p">:</span> <span class="n">system_prompt</span><span class="p">,</span> <span class="s2">&quot;user_prompt&quot;</span><span class="p">:</span> <span class="n">user_prompt</span><span class="p">,</span> <span class="s2">&quot;response&quot;</span><span class="p">:</span> <span class="n">response</span><span class="p">})</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">summary_log</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s1">&#39;problem_instance&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">problem_instance</span><span class="p">(</span><span class="n">summary</span><span class="p">),</span> <span class="s1">&#39;summary&#39;</span><span class="p">:</span> <span class="n">summary</span><span class="p">})</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;system_prompt&quot;</span><span class="p">:</span> <span class="n">system_prompt</span><span class="p">,</span>
+                    <span class="s2">&quot;user_prompt&quot;</span><span class="p">:</span> <span class="n">user_prompt</span><span class="p">,</span>
+                    <span class="s2">&quot;response&quot;</span><span class="p">:</span> <span class="n">response</span><span class="p">,</span>
+                <span class="p">}</span>
+            <span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">summary_log</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                <span class="p">{</span><span class="s2">&quot;problem_instance&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">problem_instance</span><span class="p">(</span><span class="n">summary</span><span class="p">),</span> <span class="s2">&quot;summary&quot;</span><span class="p">:</span> <span class="n">summary</span><span class="p">}</span>
+            <span class="p">)</span>
 
         <span class="k">return</span> <span class="n">update_dict</span>
 
 <div class="viewcode-block" id="OptoPrime.construct_update_dict">
-<a class="viewcode-back" href="../../../api/opto/opto.optimizers.optoprime.html#opto.optimizers.OptoPrime.construct_update_dict">[docs]</a>
-    <span class="k">def</span> <span class="nf">construct_update_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">suggestion</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="n">ParameterNode</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+<a class="viewcode-back" href="../../../_generated/opto.optimizers.optoprime.OptoPrime.construct_update_dict.html#opto.optimizers.optoprime.OptoPrime.construct_update_dict">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">construct_update_dict</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">suggestion</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="n">ParameterNode</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Convert the suggestion in text into the right data type.&quot;&quot;&quot;</span>
         <span class="c1"># TODO: might need some automatic type conversion</span>
         <span class="n">update_dict</span> <span class="o">=</span> <span class="p">{}</span>
@@ -878,8 +891,8 @@ document.write(`
 
 
 <div class="viewcode-block" id="OptoPrime.extract_llm_suggestion">
-<a class="viewcode-back" href="../../../api/opto/opto.optimizers.optoprime.html#opto.optimizers.OptoPrime.extract_llm_suggestion">[docs]</a>
-    <span class="k">def</span> <span class="nf">extract_llm_suggestion</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">response</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+<a class="viewcode-back" href="../../../_generated/opto.optimizers.optoprime.OptoPrime.extract_llm_suggestion.html#opto.optimizers.optoprime.OptoPrime.extract_llm_suggestion">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">extract_llm_suggestion</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">response</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Extract the suggestion from the response.&quot;&quot;&quot;</span>
         <span class="n">suggestion</span> <span class="o">=</span> <span class="p">{}</span>
         <span class="n">attempt_n</span> <span class="o">=</span> <span class="mi">0</span>
@@ -923,22 +936,29 @@ document.write(`
         <span class="c1"># if the suggested value is a code, and the entire code body is empty (i.e., not even function signature is present)</span>
         <span class="c1"># then we remove such suggestion</span>
         <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">suggestion</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-            <span class="k">if</span> <span class="s2">&quot;__code&quot;</span> <span class="ow">in</span> <span class="n">key</span> <span class="ow">and</span> <span class="n">value</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="s2">&quot;__code&quot;</span> <span class="ow">in</span> <span class="n">key</span> <span class="ow">and</span> <span class="n">value</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
                 <span class="k">del</span> <span class="n">suggestion</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
 
         <span class="k">return</span> <span class="n">suggestion</span></div>
 
 
 <div class="viewcode-block" id="OptoPrime.call_llm">
-<a class="viewcode-back" href="../../../api/opto/opto.optimizers.optoprime.html#opto.optimizers.OptoPrime.call_llm">[docs]</a>
-    <span class="k">def</span> <span class="nf">call_llm</span><span class="p">(</span>
-        <span class="bp">self</span><span class="p">,</span> <span class="n">system_prompt</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">user_prompt</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">verbose</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">bool</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">max_tokens</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">4096</span>
+<a class="viewcode-back" href="../../../_generated/opto.optimizers.optoprime.OptoPrime.call_llm.html#opto.optimizers.optoprime.OptoPrime.call_llm">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">call_llm</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">system_prompt</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">user_prompt</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">verbose</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">bool</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">max_tokens</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">4096</span><span class="p">,</span>
     <span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Call the LLM with a prompt and return the response.&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">verbose</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">(</span><span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;output&quot;</span><span class="p">):</span>
             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Prompt</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">system_prompt</span> <span class="o">+</span> <span class="n">user_prompt</span><span class="p">)</span>
 
-        <span class="n">messages</span> <span class="o">=</span> <span class="p">[{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;system&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="n">system_prompt</span><span class="p">},</span> <span class="p">{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="n">user_prompt</span><span class="p">}]</span>
+        <span class="n">messages</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="p">{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;system&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="n">system_prompt</span><span class="p">},</span>
+            <span class="p">{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="n">user_prompt</span><span class="p">},</span>
+        <span class="p">]</span>
 
         <span class="k">try</span><span class="p">:</span>  <span class="c1"># Try tp force it to be a json object</span>
             <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">llm</span><span class="p">(</span>
@@ -964,7 +984,7 @@ document.write(`
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
 </div>
@@ -973,8 +993,6 @@ document.write(`
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"></div>
               
             
           </div>
@@ -1022,8 +1040,8 @@ By Ching-An Cheng, Allen Nie, Adith Swaminathan
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
-<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>
